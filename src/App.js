@@ -5,7 +5,7 @@ import Phonebook from './components/phonebook'
 import ClickCounter from './components/clickCounter'
 import Notification from './components/Notification'
 import noteService from './services/notes'
-import ReminderApp from './reminderApp'
+import ReminderApp from './components/reminderApp'
 
 const App = () => {
   const [notes, setNotes] = useState([])

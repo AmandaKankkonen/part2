@@ -11,11 +11,27 @@ const getAll = () => {
   const item = {
     reminders: [
       {
-        name: 'Buy some eggs',
-        timestamp: "2018-11-10T13:00:00.141Z"
+        "note": "Buy some eggs",
+        "time": "2021-11-10T13:00:00.141Z",
+        "id": 1
+      },
+      {
+        "note": "Make an omelette",
+        "time": "2021-11-11T08:00:00.141Z",
+        "id": 2
+      },
+      {
+        "note": "Wash dishes",
+        "time": "2021-11-11T09:00:00.000Z",
+        "id": 3
+      },
+      {
+       "note": "Buy more eggs",
+        "time": "2021-11-11T13:00:00.000Z",
+        "id": 4
       }
     ],
-    newName: ''
+    newNote: ''
   }
   return request.then(response => response.data.concat(item))
 }

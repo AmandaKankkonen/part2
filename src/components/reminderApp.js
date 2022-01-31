@@ -9,21 +9,27 @@ class ReminderApp extends Component {
             note:"",
             date:"",
             noteBook:[
-              /*{
-                name: 'John Doe',
-                number: '358401234567',
-                id: 1
-              },
-              {
-                name: 'Jane Doe',
-                number: '44551234567',
-                id: 2
-              },
-              {
-                name: 'Foo bar',
-                number: '000',
-                id: 3
-              }*/  ],
+    /* {
+          "note": "Buy some eggs",
+          "time": "2021-11-10T13:00:00.141Z",
+          "id": 1
+        },
+        {
+          "note": "Make an omelette",
+          "time": "2021-11-11T08:00:00.141Z",
+          "id": 2
+        },
+        {
+          "note": "Wash dishes",
+          "time": "2021-11-11T09:00:00.000Z",
+          "id": 3
+        },
+        {
+         "note": "Buy more eggs",
+          "time": "2021-11-11T13:00:00.000Z",
+          "id": 4
+        }
+    */  ],
             showForm:false
            }
         
@@ -69,10 +75,8 @@ class ReminderApp extends Component {
 
   render() {
       
-      let form=null;
-      if(this.state.showForm)
-      {
-          form=
+     
+         let form=
              (  
               <div className="container">
               <form className="form">
@@ -86,32 +90,21 @@ class ReminderApp extends Component {
             </form>
               </div>
           )
-      }
+      
            
     return (
-      <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-4">
+
         <div className="App">
-        <h2 className="header">Reminders</h2>
-        <span style={{cursor:"pointer",color:"blue",textDecoration:"underline"}} onClick={this.toggleShowForm}>Create New Reminder</span>
-            
+        <h2 className="header">Reminders:</h2>  
         {form}
-        
-        {this.state.noteBook.map(contact =>
-           <div className="contacts">
-           <h5>{contact.note}</h5>
-           <p>{contact.date}</p>
+        {this.state.noteBook.map(reminder =>
+           <div className="reminders">
+           <h5>{reminder.note}</h5>
+           <p>{reminder.date}</p>
            <hr/>
           </div>
         )} 
         </div>
-        </div>
-        
-        
-     <div className="col-md-4"></div>
-     </div>
-     </div>
     );
   }
 }
