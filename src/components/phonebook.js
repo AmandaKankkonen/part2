@@ -1,6 +1,5 @@
 import React from 'react'
 import Contents from './Contents'
-import PhoneCount from './phoneCount'
 import PhoneHeader from './phoneHeader'
 
 
@@ -25,11 +24,13 @@ const Phonebook = () => {
 
   }
 
+  var result = phonebookapp.contacts.length;
+
   return (
     <div>
       <PhoneHeader title={phonebookapp.title} />
       <Contents contacts={phonebookapp.contacts} />
-      <PhoneCount />
+      <h4>Number of Contacts: { result }</h4>
     </div>
   )
 }
