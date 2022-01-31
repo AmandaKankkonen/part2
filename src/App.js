@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Note from './components/Note'
-import Footer from './components/Footer'
 import Phonebook from './components/phonebook'
 import ClickCounter from './components/clickCounter'
 import Notification from './components/Notification'
@@ -24,7 +23,7 @@ const App = () => {
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
-      content: newNote,
+      note: newNote,
       date: new Date().toISOString(),
       important: Math.random() > 0.5,
     }
@@ -91,8 +90,7 @@ const App = () => {
           onChange={handleNoteChange}
         />
         <button type="submit">Save</button>
-      </form>
-      <Footer /> 
+      </form> 
       <ReminderApp />
     </div>
   )

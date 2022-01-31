@@ -11,24 +11,28 @@ const getAll = () => {
   const item = {
     reminders: [
       {
-        "note": "Buy some eggs",
-        "time": "2021-11-10T13:00:00.141Z",
-        "id": 1
+        note: "Buy some eggs",
+        date: "2021-11-10T13:00:00.141Z",
+        id: 1,
+        important: true,
       },
       {
-        "note": "Make an omelette",
-        "time": "2021-11-11T08:00:00.141Z",
-        "id": 2
+        note: "Make an omelette",
+        date: "2021-11-11T08:00:00.141Z",
+        id: 2,
+        important: true,
       },
       {
-        "note": "Wash dishes",
-        "time": "2021-11-11T09:00:00.000Z",
-        "id": 3
+        note: "Wash dishes",
+        date: "2021-11-11T09:00:00.000Z",
+        id: 3,
+        important: true,
       },
       {
-       "note": "Buy more eggs",
-        "time": "2021-11-11T13:00:00.000Z",
-        "id": 4
+        note: "Buy more eggs",
+        date: "2021-11-11T13:00:00.000Z",
+        id: 4,
+        important: true,
       }
     ],
     newNote: ''
