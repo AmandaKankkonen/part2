@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Note from './components/Note'
+//import Note from './components/Note'
 import noteService from './services/notes'
 //import Phonebook from './components/phonebook'
 //import ClickCounter from './components/clickCounter'
 //import Notification from './components/Notification'
 //import ReminderApp from './components/reminderApp'
 
-class App extends React.component {
+class App extends React.Component {
 
   componentDidMount() {
     noteService
@@ -43,4 +43,5 @@ class App extends React.component {
     }
   }
 }
+
  export default App
