@@ -17,12 +17,18 @@ class App extends React.Component {
   }
 
   addNote = (event) => {
-    // ...
-    noteService
-      .create(noteObject)
-      .then(newNote => {
+    event.preventDefault()
+    const noteObject = {
+      content: this.state.newNote,
+      date: new Date(),
+      important: Math.random() > 0.5
+    }
+  
+    axios
+      .post('http://localhost:3001/reminders', noteObject)
+      .then(response => {
         this.setState({
-          notes: this.state.notes.concat(newNote),
+          notes: this.state.notes.concat(response.data),
           newNote: ''
         })
       })
@@ -30,14 +36,15 @@ class App extends React.Component {
 
   toggleImportanceOf = (id) => {
     return () => {
-      // ...
-
-      noteService
-        .update(id, changedNote)
-        .then(changedNote => {
-          const notes = this.state.notes.filter(n => n.id !== id)
+      const url = 'http://localhost:3001/reminders/${id}'
+      const note = this.state.notes.find(n => n.id === id)
+      const changedNote = { ...note, important: !note.important }
+  
+      axios
+        .put(url, changedNote)
+        .then(response => {
           this.setState({
-            notes: notes.concat(changedNote)
+            notes: this.state.notes.map(note => note.id !== id ? note : response.data)
           })
         })
     }

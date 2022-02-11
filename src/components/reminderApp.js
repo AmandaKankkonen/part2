@@ -74,8 +74,6 @@ class ReminderApp extends Component {
     }
 
   render() {
-      
-     
          let form=
              (  
               <div className="container">
@@ -90,8 +88,7 @@ class ReminderApp extends Component {
             </form>
               </div>
           )
-      
-           
+          
     return (
 
         <div className="App">
