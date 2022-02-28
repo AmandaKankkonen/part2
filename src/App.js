@@ -30,14 +30,13 @@ class App extends React.Component {
    addReminder = (event) =>{
        event.preventDefault()
        console.log("Add note")
-       const nameObject = {
+       const newObject = {
         note: this.state.newNote,
         timestamp: this.state.newTime,
       } 
 
-
     axios
-    .post('http://localhost:3001/reminders', nameObject)
+    .post('http://localhost:3001/reminders', newObject)
     .then(response => {
       this.setState({
         reminders: this.state.reminders.concat(response.data),
@@ -48,19 +47,20 @@ class App extends React.Component {
 }
 
    handleNoteChange = (event) => {
-       console.log(event.target.value)
-       this.setState({newNote: event.target.value})
+    console.log(event.target.value)
+    this.setState({newNote: event.target.value})
    }
 
    handleTimeChange = (event) =>{
-     this.setState({newTime: event.target.value})
+    console.log(event.target.value)
+    this.setState({newTime: event.target.value})
    }
 
    deleteReminder = (id) => {
     return() => {
     const url = `http://localhost:3001/reminders/${id}`
 
-    window.confirm("Are you sure you want to delete?") ?
+    window.confirm("Are you sure you want to delete this reminder?") ?
      axios
      .delete(url)
      (reminderService
@@ -88,13 +88,13 @@ class App extends React.Component {
         </div>
         </form>
         <h2>Reminders:</h2>
-        {this.state.reminders.map(reminder => { return (
-             <div>
-              <p>{reminder.timestamp} {reminder.note} 
-              <button onClick={this.deleteReminder(reminder.id)}>
+        {this.state.reminders.map(reminders => { return (
+            <div key={reminders.id}>
+              <p>{reminders.timestamp} {reminders.note} 
+              <button onClick={this.deleteReminder(reminders.id)}>
                 Delete
               </button></p>
-             </div>  
+            </div>  
         )})}
       
       </div>
