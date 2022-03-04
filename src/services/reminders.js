@@ -1,8 +1,8 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/reminders'
+const baseUrl = 'http://localhost:3001/api/reminders'
 
 const getAll = () => {
-  const request = axios.get(baseUrl)
+  const request = axios.get(baseUrl).catch(error => console.log(error.request));
   return request.then(response => { return response.data })
 }
 
