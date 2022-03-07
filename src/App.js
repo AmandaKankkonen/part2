@@ -34,7 +34,6 @@ class App extends React.Component {
         note: this.state.newNote,
         timestamp: this.state.newTime,
       } 
-
     axios
     .post('http://localhost:3001/api/reminders', newObject)
     .then(response => {
@@ -62,7 +61,6 @@ class App extends React.Component {
     console.log("Delete/d note")
     return() => {
     const url = `http://localhost:3001/api/reminders/${id}`
-
     window.confirm("Are you sure you want to delete this reminder?") ?
      axios
      .delete(url)
@@ -71,23 +69,23 @@ class App extends React.Component {
       .then(reminders => {
         this.setState({ reminders })
       })):
-     alert("Reminder was not deleted.");
+     alert("Reminder was deleted.");
    } 
   }
 
   render() {
     return (
       <div>
-         <h2>Add Reminder</h2>
+        <h2><u>Add Reminder</u></h2>
         <form onSubmit={this.addReminder}>
         <div>
-            Subject: <input value={this.state.newNote} onChange={this.handleNoteChange} />
+          <b>Subject:</b> <input value={this.state.newNote} onChange={this.handleNoteChange} />
         </div>
         <div>
-            Time: <input value={this.state.newTime} onChange={this.handleTimeChange} />
+          <b>Time:</b> <input value={this.state.newTime} onChange={this.handleTimeChange} />
         </div>
         <div>
-            <button type="submit">Add Reminder</button>
+          <button type="submit">Add Reminder</button>
         </div>
         </form>
         <h2>Reminders:</h2>
