@@ -35,7 +35,7 @@ class App extends React.Component {
         timestamp: this.state.newTime,
       } 
     axios
-    .post('http://localhost:3001/api/reminders', newObject)
+    .post('http://localhost:3001/reminders', newObject)
     .then(response => {
       this.setState({
         reminders: this.state.reminders.concat(response.data),
@@ -60,7 +60,7 @@ class App extends React.Component {
    deleteReminder = (id) => {
     console.log("Delete/d note")
     return() => {
-    const url = `http://localhost:3001/api/reminders/${id}`
+    const url = `http://localhost:3001/reminders/${id}`
     window.confirm("Are you sure you want to delete this reminder?") ?
      axios
      .delete(url)
