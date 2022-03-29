@@ -63,13 +63,13 @@ class App extends React.Component {
     const url = `http://localhost:3001/reminders/${id}`
     window.confirm("Are you sure you want to delete this reminder?") ?
      axios
-     .delete(url)
+     .delete(url):
+     alert("Reminder was deleted.");
      (reminderService
       .getAll()
       .then(reminders => {
         this.setState({ reminders })
-      })):
-     alert("Reminder was deleted.");
+      }))
    } 
   }
 

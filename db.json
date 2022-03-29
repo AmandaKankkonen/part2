@@ -1,22 +1,22 @@
 {
   "reminders": [
     {
-      "note": "Buy some eggs",
+      "name": "Buy some eggs",
       "timestamp": "2021-11-10T13:00:00.141Z",
       "id": 1
     },
     {
-      "note": "Make an omelette",
+      "name": "Make an omelette",
       "timestamp": "2021-11-11T08:00:00.141Z",
       "id": 2
     },
     {
-      "note": "Wash dishes",
+      "name": "Wash dishes",
       "timestamp": "2021-11-11T09:00:00.000Z",
       "id": 3
     },
     {
-      "note": "Buy more eggs",
+      "name": "Buy more eggs",
       "timestamp": "2021-11-11T13:00:00.000Z",
       "id": 4
     }
